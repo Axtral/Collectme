@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Collectme</string>
+    <string name="Title_Form_Inscription">Title_Form_Inscription</string>
+    <string name="email_text">email_text</string>
+    <string name="mot_de_passe_text">mot_de_passe_text</string>
+    <string name="allerALaConnexion">Connexion</string>
+    <string name="tnscription_text">S\'inscire</string>
+    <string name="inscription_reussite">inscription_reussite</string>
+    <string name="inscription_echec">inscription_echec</string>
 </resources>

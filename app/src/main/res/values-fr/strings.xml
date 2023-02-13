@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Collectme</string>
+    <string name="Title_Form_Inscription">Formulaire d\'inscription</string>
+    <string name="email_text">Email</string>
+    <string name="mot_de_passe_text">mot de passe</string>
+    <string name="allerALaConnexion">Connexion</string>
+    <string name="tnscription_text">S\'inscire</string>
+    <string name="inscription_reussite">inscription reussite</string>
+    <string name="inscription_echec">inscription echec</string>
+</resources>
