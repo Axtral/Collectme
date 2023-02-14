@@ -3,6 +3,7 @@ package com.axtral.collectme;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -49,6 +50,8 @@ public class InscriptionActivity extends AppCompatActivity {
     public void onClickGoToConnexion(View view) {
         // Afficher à l'utilisateur bonjour, tu es dans le onClickGoToConnexion
         Toast.makeText(this, "bonjour, tu es dans le onClickGoToConnexion", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, ConnexionActivity.class);
+        startActivity(intent);
 
     }
 

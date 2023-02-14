@@ -6,4 +6,10 @@
     <string name="mot_de_passe_text">Password</string>
     <string name="allerALaConnexion">Login</string>
     <string name="tnscription_text">Sign in</string>
+    <string name="inscription_reussite">succes inscription</string>
+    <string name="inscription_echec">echec inscription</string>
+    <string name="back">back</string>
+    <string name="title_form_connexion">Sign in</string>
+    <string name="connexion_reussite">Sign in ok</string>
+    <string name="connexion_echec">Fail sign in</string>
 </resources>
