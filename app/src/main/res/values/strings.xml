@@ -7,4 +7,8 @@
     <string name="tnscription_text">S\'inscire</string>
     <string name="inscription_reussite">inscription_reussite</string>
     <string name="inscription_echec">inscription_echec</string>
+    <string name="back">retour</string>
+    <string name="title_form_connexion">title  form connexion</string>
+    <string name="connexion_reussite">connexion_reussite</string>
+    <string name="connexion_echec">connexion_echec</string>
 </resources>
