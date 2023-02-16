@@ -60,7 +60,6 @@ public class CategorieDAO extends AbstractDAO{
                                     ((AjoutArticleActivity) context).getAllCategorie(categories);
                                     break;
                                 default:
-                                    ((MainActivity) context).getAllCategorie(categories);
                                     break;
                             }
 

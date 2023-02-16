@@ -7,8 +7,6 @@ import com.axtral.collectme.dao.CategorieDAO;
 import com.axtral.collectme.entity.Article;
 import com.axtral.collectme.service.ArticleService;
 
-import java.util.List;
-
 public class ArticleServiceImpl implements ArticleService {
 
     private ArticleDAO articleDAO = new ArticleDAO();
@@ -20,18 +18,18 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public Article updateArticle(Article article) {
-        return articleDAO.updateArticle(article);
+    public void updateArticle(Article article) {
+        articleDAO.updateArticle(article);
     }
 
     @Override
-    public Article getArticle(String idArticle) {
-        return articleDAO.getArticle(idArticle);
+    public void getArticle(String idArticle) {
+        articleDAO.getArticle(idArticle);
     }
 
     @Override
-    public List<Article> getArticles(String idUser, Context context, String nameActivity) {
-        return articleDAO.getArticles(idUser, context, nameActivity);
+    public void getArticles(String idUser, Context context, String nameActivity, String idCategorieItem) {
+        articleDAO.getArticles(idUser, context, nameActivity, idCategorieItem);
     }
 
     @Override

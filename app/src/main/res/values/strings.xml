@@ -21,4 +21,8 @@
     <string name="formulaire_ajout_article">Formulaire d\'ajout d\'article</string>
     <string name="annulee">annulée</string>
     <string name="date_creation">date création</string>
+    <string name="id_user_for_article">id user</string>
+    <string name="id_article_detail">id article</string>
+    <string name="update_article" >mise à jour</string>
+    <string name="formulaire_update_article">Formulaire de mise à jour</string>
 </resources>

@@ -47,12 +47,9 @@ public class CategorieSpinnerAdapter extends ArrayAdapter<Categorie> {
         Categorie categorie = getItem(position);
         if (categorie != null){
             et_nom.setText(categorie.getNom());
-            /*et_nom.setTextSize(20f);
-            et_nom.setTextColor(Color.BLACK);*/
-            //Log.d("TestForSpinnerCustom", "spinner custom ok");
             et_idCategorie.setText(categorie.getId());
-            et_idCategorie.setVisibility(View.INVISIBLE);
-            et_nom_label.setVisibility(View.INVISIBLE);
+            et_idCategorie.setVisibility(View.GONE);
+            et_nom_label.setVisibility(View.GONE);
         }
 
         return convertView;

@@ -40,7 +40,7 @@ public class CategorieAdapter extends RecyclerView.Adapter<CategorieViewHolder> 
         Categorie categorie = categories.get(position);
         holder.getEt_nom().setText(categorie.getNom());
         holder.getEt_idCategorie().setText(categorie.getId());
-        holder.getEt_idCategorie().setVisibility(View.INVISIBLE);
+        holder.getEt_idCategorie().setVisibility(View.GONE);
 
     }
 

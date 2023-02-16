@@ -22,7 +22,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/tv_name_formulaire_article"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/formulaire_ajout_article" />
@@ -67,11 +67,41 @@
                     android:text="@string/add_article_text" />
 
                 <Button
+                    android:id="@+id/b_form_update_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onClickUpdate"
+                    android:text="@string/update_article"
+                    android:visibility="gone" />
+
+                <Button
                     android:id="@+id/b_form_annulee_ajout_article"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="onClickCancelAjoutArticle"
                     android:text="@string/annulee" />
+
+                <Button
+                    android:id="@+id/b_form_annulee_update_article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="onCLickBackUpdate"
+                    android:text="@string/annulee"
+                    tools:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/id_user_article_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/id_user_for_article"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/id_article_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/id_article_detail"
+                    android:visibility="gone" />
 
             </LinearLayout>
 

@@ -5,7 +5,6 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.axtral.collectme.AjoutArticleActivity;
 import com.axtral.collectme.MainActivity;
 import com.axtral.collectme.entity.Article;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,9 +20,10 @@ import java.util.List;
 
 public class ArticleDAO extends AbstractDAO{
 
-    public List<Article> getArticles(String idUser, Context context, String nameActivity){
+    public List<Article> getArticles(String idUser, Context context, String nameActivity, String idCategorieItem){
         List<Article> articles = new ArrayList<>();
         db.collection("Article").whereEqualTo("idUser", idUser)
+                .whereEqualTo("idCategorie", idCategorieItem)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -80,7 +80,7 @@ public class ArticleDAO extends AbstractDAO{
                 });
     }
 
-    public Article getArticle(String idArticle){
+    public void getArticle(String idArticle){
         final Article[] article = {new Article()};
         DocumentReference docRef = db.collection("Article").document(idArticle);
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -94,7 +94,6 @@ public class ArticleDAO extends AbstractDAO{
                 Log.w("getArticle", "Error search document", e);
             }
         });
-        return article[0];
     }
 
     public void deleteArticle(String idArticle){
@@ -114,7 +113,7 @@ public class ArticleDAO extends AbstractDAO{
                 });
     }
 
-    public Article updateArticle(Article article){
+    public void updateArticle(Article article){
         DocumentReference articleRef = db.collection("Article").document(article.getId());
         articleRef
                 .update(article.mapForFireBase())
@@ -130,6 +129,5 @@ public class ArticleDAO extends AbstractDAO{
                         Log.w("updateArticle", "Error updating document", e);
                     }
                 });
-        return article;
     }
 }

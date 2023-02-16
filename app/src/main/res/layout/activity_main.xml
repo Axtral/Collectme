@@ -38,16 +38,12 @@
                 android:contentDescription="@string/choose_category"
                 android:minHeight="48dp" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvListeCategorie"
+            <View
+                android:id="@+id/divider3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="1dp"
                 android:layout_weight="1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" >
-
-            </androidx.recyclerview.widget.RecyclerView>
+                android:background="?android:attr/listDivider" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_list_article"

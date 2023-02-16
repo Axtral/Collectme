@@ -2,6 +2,7 @@ package com.axtral.collectme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.axtral.collectme.adapter.CategorieSpinnerAdapter;
@@ -26,7 +28,6 @@ import java.util.List;
 
 public class AjoutArticleActivity extends AppCompatActivity {
 
-    private Button b_ajout_article, b_cancel;
     private EditText et_nom, etml_description;
     private Spinner spinnerAllCategorie;
     private CategorieSpinnerAdapter categorieSpinnerAdapter;
@@ -34,6 +35,10 @@ public class AjoutArticleActivity extends AppCompatActivity {
     private FirebaseUser user;
     private ArticleService articleService;
     private String idCategorie;
+    private Button b_form_update_article, b_form_ajout_article,
+            b_form_annulee_update_article, b_form_annulee_ajout_article;
+    private TextView tv_name_formulaire_article, id_user_article_update, id_article_update;
+    private Article currentIntentArticle;
 
 
     @Override
@@ -44,13 +49,40 @@ public class AjoutArticleActivity extends AppCompatActivity {
     }
 
     private void init(){
-        user = FirebaseAuth.getInstance().getCurrentUser();
+        /*user = FirebaseAuth.getInstance().getCurrentUser();
         articleService = new ArticleServiceImpl();
-        b_ajout_article = (Button) findViewById(R.id.b_form_ajout_article);
-        b_cancel = (Button) findViewById(R.id.b_form_annulee_ajout_article);
         et_nom = (EditText) findViewById(R.id.et_nom_form_article);
         etml_description = (EditText) findViewById(R.id.etml_form_description);
         spinnerAllCategorie = (Spinner) findViewById(R.id.chooseCategorieAjoutArticle);
+        categorieDAO = new CategorieDAO();
+        categorieDAO.getListCategories(this, "AjoutArticleActivity");*/
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        articleService = new ArticleServiceImpl();
+        et_nom = (EditText) findViewById(R.id.et_nom_form_article);
+        etml_description = (EditText) findViewById(R.id.etml_form_description);
+        tv_name_formulaire_article = (TextView) findViewById(R.id.tv_name_formulaire_article);
+        id_user_article_update = (TextView) findViewById(R.id.id_user_article_update);
+        id_article_update = (TextView) findViewById(R.id.id_article_update);
+        spinnerAllCategorie = (Spinner) findViewById(R.id.chooseCategorieAjoutArticle);
+
+        Intent intent = getIntent();
+        currentIntentArticle = intent.getParcelableExtra("articleSelected");
+        if(currentIntentArticle != null) {
+            b_form_update_article = (Button) findViewById(R.id.b_form_update_article);
+            b_form_update_article.setVisibility(View.VISIBLE);
+            b_form_ajout_article = (Button) findViewById(R.id.b_form_ajout_article);
+            b_form_ajout_article.setVisibility(View.GONE);
+            b_form_annulee_update_article = (Button) findViewById(R.id.b_form_annulee_update_article);
+            b_form_annulee_update_article.setVisibility(View.VISIBLE);
+            b_form_annulee_ajout_article = (Button) findViewById(R.id.b_form_annulee_ajout_article);
+            b_form_annulee_ajout_article.setVisibility(View.GONE);
+            id_article_update.setText(currentIntentArticle.getId());
+            id_user_article_update.setText(currentIntentArticle.getIdUser());
+            tv_name_formulaire_article.setText(R.string.formulaire_update_article);
+            etml_description.setText(currentIntentArticle.getDescription());
+            et_nom.setText(currentIntentArticle.getNom());
+        }
         categorieDAO = new CategorieDAO();
         categorieDAO.getListCategories(this, "AjoutArticleActivity");
 
@@ -62,7 +94,13 @@ public class AjoutArticleActivity extends AppCompatActivity {
 
         categorieSpinnerAdapter = new CategorieSpinnerAdapter(this,categorieArrayList);
         spinnerAllCategorie.setAdapter(categorieSpinnerAdapter);
-
+        if(currentIntentArticle != null){
+            for (Categorie categorie : categories){
+                if (currentIntentArticle.getIdCategorie().equals(categorie.getId())){
+                    spinnerAllCategorie.setSelection(categorieSpinnerAdapter.getPosition(categorie));
+                }
+            }
+        }
         spinnerAllCategorie.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -108,5 +146,30 @@ public class AjoutArticleActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    public void onCLickBackUpdate(View view){
+        Intent intent = new Intent(this, ArticleDetailActivity.class);
+        intent.putExtra("articleSelected", currentIntentArticle);
+        this.startActivity(intent);
+        finish();
+    }
+
+    public void onClickUpdate(View view){
+        // Vérification qu'on set bien tout les valeurs
+        Log.d("testFormUpdateArticle", "id categorie : " + idCategorie);
+        String nom = et_nom.getText().toString();
+        String description = etml_description.getText().toString();
+        currentIntentArticle.setNom(nom);
+        currentIntentArticle.setDescription(description);
+        currentIntentArticle.setIdCategorie(idCategorie);
+        Log.d("testFormUpdateArticle", "nom : " + nom);
+        Log.d("testFormUpdateArticle", "description : " + description);
+        Log.d("testFormUpdateArticle", "id article : " + currentIntentArticle.getId());
+        articleService.updateArticle(currentIntentArticle);
+        Intent intent = new Intent(this, ArticleDetailActivity.class);
+        intent.putExtra("articleSelected", currentIntentArticle);
+        this.startActivity(intent);
+        finish();
     }
 }

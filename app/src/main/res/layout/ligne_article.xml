@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:id="@+id/layout_v_ligne_article"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -21,6 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:minHeight="@dimen/min_heigt_menu"
                 android:text="@string/nom_article" />
 
             <TextView
@@ -28,6 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:minHeight="@dimen/min_heigt_menu"
                 android:text="@string/nom_article" />
 
         </LinearLayout>
@@ -43,6 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:minHeight="@dimen/min_heigt_menu"
                 android:text="@string/description_article" />
 
             <TextView
@@ -50,6 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:minHeight="@dimen/min_heigt_menu"
                 android:text="@string/description_article" />
         </LinearLayout>
 
@@ -57,7 +62,32 @@
             android:id="@+id/date_detail_article"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="@dimen/min_heigt_menu"
             android:text="@string/date_creation" />
+
+        <TextView
+            android:id="@+id/id_categorie_article_ligne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/id_categorie_spinner" />
+
+        <TextView
+            android:id="@+id/id_user_article_ligne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/id_user_for_article" />
+
+        <TextView
+            android:id="@+id/id_article_ligne"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/id_article_detail" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,17 +4,15 @@ import android.content.Context;
 
 import com.axtral.collectme.entity.Article;
 
-import java.util.List;
-
 public interface ArticleService {
 
     void insertArticle(Article article);
 
-    Article updateArticle(Article article);
+    void updateArticle(Article article);
 
-    Article getArticle(String idArticle);
+    void getArticle(String idArticle);
 
-    List<Article> getArticles(String idUser, Context context, String nameActivity);
+    void getArticles(String idUser, Context context, String nameActivity, String idCategorieItem);
 
     void deleteArticle(Article article);
 
