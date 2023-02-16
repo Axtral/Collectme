@@ -11,4 +11,14 @@
     <string name="title_form_connexion">title  form connexion</string>
     <string name="connexion_reussite">connexion_reussite</string>
     <string name="connexion_echec">connexion_echec</string>
+    <string name="add_article_text">ajouter un article</string>
+    <string name="choose_category">choix de la categorie</string>
+    <string name="nom_categorie">Nom categorie</string>
+    <string name="nom_categorie_label">Nom categorie</string>
+    <string name="id_categorie_spinner">id categorie</string>
+    <string name="nom_article">nom article</string>
+    <string name="description_article">description article</string>
+    <string name="formulaire_ajout_article">Formulaire d\'ajout d\'article</string>
+    <string name="annulee">annulée</string>
+    <string name="date_creation">date création</string>
 </resources>
