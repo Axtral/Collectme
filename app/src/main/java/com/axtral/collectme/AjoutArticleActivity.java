@@ -140,6 +140,9 @@ public class AjoutArticleActivity extends AppCompatActivity {
             Log.d("testFormAjoutArticle", "uid : " + uid);
             newArticle.setIdUser(uid);
             articleService.insertArticle(newArticle);
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("articleSelected", newArticle);
+            this.startActivity(intent);
             finish();
         }else {
             Log.d("testFormAjoutArticle", "création impossible");

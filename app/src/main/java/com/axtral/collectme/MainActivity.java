@@ -53,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
             Log.d("swipedArticleList", "on swip un article");
             Article article = articleList.get(viewHolder.getAdapterPosition());
             Log.d("swipedArticleList", "on swip l'article : " + article.getNom());
+            Log.d("swipedArticleList", "on swip l'article : " + article.getId());
+            articleService = new ArticleServiceImpl();
+            articleService.deleteArticle(article);
             articleList.remove(viewHolder.getAdapterPosition());
             articleRecyclerVeiwAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
         }
@@ -142,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
     public void onClickGoToFormAjoutArticle(View view){
         Intent intent = new Intent(this, AjoutArticleActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void gotToDetailArticle(Article article){

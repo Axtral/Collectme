@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:onClick="onCLickBackUpdate"
                     android:text="@string/annulee"
-                    tools:visibility="gone" />
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/id_user_article_update"
