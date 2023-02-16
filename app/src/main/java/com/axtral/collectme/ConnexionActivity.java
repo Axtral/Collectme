@@ -77,6 +77,7 @@ public class ConnexionActivity extends AppCompatActivity {
 
     public void updateUI(FirebaseUser user){
         if (user != null){
+            Log.d("testConnexion", user.getUid());
             Toast.makeText(ConnexionActivity.this,
                     R.string.connexion_reussite, Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, MainActivity.class);
