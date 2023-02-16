@@ -8,7 +8,9 @@ import android.widget.AdapterView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,7 +32,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-
     private CategorieDAO categorieDAO;
     private Spinner spinnerChooseCategorie;
     private RecyclerView rvListArticle;
@@ -39,6 +40,23 @@ public class MainActivity extends AppCompatActivity {
     private ArticleService articleService;
     private ArticleRecyclerVeiwAdapter articleRecyclerVeiwAdapter;
     private Article currentIntentArticle;
+    private List<Article> articleList;
+
+    ItemTouchHelper.SimpleCallback callback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT | ItemTouchHelper.LEFT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            Log.d("swipedArticleList", "on swip un article");
+            Article article = articleList.get(viewHolder.getAdapterPosition());
+            Log.d("swipedArticleList", "on swip l'article : " + article.getNom());
+            articleList.remove(viewHolder.getAdapterPosition());
+            articleRecyclerVeiwAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+        }
+    };
 
     //articles
     @Override
@@ -101,9 +119,13 @@ public class MainActivity extends AppCompatActivity {
         //on renseigne la liste des categorie a notre adapter
         //Log.d("testListCategorie","nbs de categorie : "+ categories.size());
         Log.d("remplirRecyclerViewArticle", "log de size : "+ articles.size());
+        articleList = articles;
         rvListArticle.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         articleRecyclerVeiwAdapter = new ArticleRecyclerVeiwAdapter(articles, this, "MainActivity");
         rvListArticle.setAdapter(articleRecyclerVeiwAdapter);
+
+        ItemTouchHelper helper = new ItemTouchHelper(callback);
+        helper.attachToRecyclerView(rvListArticle);
 
     }
 
