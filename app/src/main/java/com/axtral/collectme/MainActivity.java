@@ -3,6 +3,9 @@ package com.axtral.collectme;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
@@ -29,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 // Page d'accueil après connexion
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AbstracCollectmeActivity {
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CategorieDAO categorieDAO;
@@ -154,5 +157,7 @@ public class MainActivity extends AppCompatActivity {
         MainActivity.this.startActivity(intent);
         finish();
     }
+
+
 
 }
