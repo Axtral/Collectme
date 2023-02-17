@@ -23,6 +23,9 @@
     <string name="date_creation">date création</string>
     <string name="id_user_for_article">id user</string>
     <string name="id_article_detail">id article</string>
-    <string name="update_article" >mise à jour</string>
+    <string name="update_article">mise à jour</string>
     <string name="formulaire_update_article">Formulaire de mise à jour</string>
+    <string name="change_password">changer mot de passe</string>
+    <string name="logout">déconnexion</string>
+    <string name="access_connexion">acccéder à la connexion</string>
 </resources>

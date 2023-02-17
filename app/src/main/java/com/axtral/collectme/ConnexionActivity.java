@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class ConnexionActivity extends AppCompatActivity {
+public class ConnexionActivity extends AbstracCollectmeActivity {
 
     private EditText et_mail, et_mdp;
     private FirebaseAuth mAuth;
@@ -39,6 +41,8 @@ public class ConnexionActivity extends AppCompatActivity {
         //Intent intent = new Intent(this, InscriptionActivity.class);
         //startActivity(intent);
         Log.d("testConnexion", "test de retour à la page précédante");
+        Intent intent = new Intent(this, InscriptionActivity.class);
+        startActivity(intent);
         finish();
 
     }
@@ -86,5 +90,15 @@ public class ConnexionActivity extends AppCompatActivity {
             Toast.makeText(ConnexionActivity.this,
                     R.string.connexion_echec, Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        boolean test = super.onCreateOptionsMenu(menu) ;
+        menu.findItem(R.id.menu_login).setVisible(true);
+        menu.findItem(R.id.menu_logout).setVisible(false);
+        menu.findItem(R.id.menu_ajout_article).setVisible(false);
+        menu.findItem(R.id.menu_change_password).setVisible(false);
+        return  test;
     }
 }

@@ -15,7 +15,7 @@ import com.axtral.collectme.entity.Article;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArticleDetailActivity extends AppCompatActivity {
+public class ArticleDetailActivity extends AbstracCollectmeActivity {
 
     private RecyclerView rvForDetailArticle;
     private ArticleRecyclerVeiwAdapter articleRecyclerVeiwAdapter;

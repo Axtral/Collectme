@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -16,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class InscriptionActivity extends AppCompatActivity {
+public class InscriptionActivity extends AbstracCollectmeActivity {
 
     private EditText et_mail, et_mdp;
     private FirebaseAuth mAuth;
@@ -85,5 +87,16 @@ public class InscriptionActivity extends AppCompatActivity {
         } else {
             Toast.makeText(InscriptionActivity.this, R.string.inscription_echec, Toast.LENGTH_LONG).show();
         }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        boolean test = super.onCreateOptionsMenu(menu) ;
+        menu.findItem(R.id.menu_login).setVisible(true);
+        menu.findItem(R.id.menu_logout).setVisible(false);
+        menu.findItem(R.id.menu_ajout_article).setVisible(false);
+        menu.findItem(R.id.menu_change_password).setVisible(false);
+        return  test;
     }
 }

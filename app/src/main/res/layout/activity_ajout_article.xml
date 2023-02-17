@@ -78,6 +78,7 @@
                     android:id="@+id/b_form_annulee_ajout_article"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/holo_red_light"
                     android:onClick="onClickCancelAjoutArticle"
                     android:text="@string/annulee" />
 
@@ -85,6 +86,7 @@
                     android:id="@+id/b_form_annulee_update_article"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/holo_red_light"
                     android:onClick="onCLickBackUpdate"
                     android:text="@string/annulee"
                     android:visibility="gone" />

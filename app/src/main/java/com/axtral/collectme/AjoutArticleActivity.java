@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AjoutArticleActivity extends AppCompatActivity {
+public class AjoutArticleActivity extends AbstracCollectmeActivity {
 
     private EditText et_nom, etml_description;
     private Spinner spinnerAllCategorie;
@@ -121,6 +121,8 @@ public class AjoutArticleActivity extends AppCompatActivity {
     }
 
     public void onClickCancelAjoutArticle(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        this.startActivity(intent);
         finish();
     }
 
