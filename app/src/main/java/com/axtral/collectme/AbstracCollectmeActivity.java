@@ -41,9 +41,8 @@ public abstract class AbstracCollectmeActivity extends AppCompatActivity {
                 break;
             case R.id.menu_change_password:
                 Log.d("menuItemChangePwd", "on va depuis la menu sur le changement de pwd ");
-                intent = new Intent(this, AjoutArticleActivity.class);
+                intent = new Intent(this, ChangerMotDePasseActivity.class);
                 startActivity(intent);
-                finish();
                 break;
             case R.id.menu_logout:
                 Log.d("menuItemLogout", "on va depuis la menu sur le logout ");
