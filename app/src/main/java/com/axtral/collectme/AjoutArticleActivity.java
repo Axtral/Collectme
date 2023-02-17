@@ -100,7 +100,6 @@ public class AjoutArticleActivity extends AbstracCollectmeActivity {
                         Categorie categorieItem = (Categorie) parent.getItemAtPosition(position);
                         String nomCategorie = categorieItem.getNom();
                         idCategorie = categorieItem.getId();
-                        Toast.makeText(AjoutArticleActivity.this, nomCategorie + " selected", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
