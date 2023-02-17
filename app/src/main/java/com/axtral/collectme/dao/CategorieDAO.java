@@ -29,7 +29,6 @@ public class CategorieDAO extends AbstractDAO{
                             List<DocumentSnapshot> result = task.getResult().getDocuments();
                             for (DocumentSnapshot document : result){
                                 categories.add(new Categorie(document.getId(), document.getString("nom")));
-
                             }
                             ((MainActivity) context).getAllCategorie(categories);
                         } else {
@@ -50,7 +49,6 @@ public class CategorieDAO extends AbstractDAO{
                             List<DocumentSnapshot> result = task.getResult().getDocuments();
                             for (DocumentSnapshot document : result){
                                 categories.add(new Categorie(document.getId(), document.getString("nom")));
-
                             }
                             switch (nameActivity){
                                 case "MainActivity" :
