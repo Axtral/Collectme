@@ -29,4 +29,9 @@
     <string name="change_password">changer mot de passe</string>
     <string name="logout">déconnexion</string>
     <string name="access_connexion">go to sigin</string>
+    <string name="formulaire_change_pwd">Formulaire de changement de mot de passe</string>
+    <string name="confirmation_mot_de_passe">Confirmation du mot de passe</string>
+    <string name="message_erreur_change_pwd">Votre mot de passe n\'est pas identique à sa confirmation</string>
+    <string name="change_pwd_succes">Changement du mot de passe réussi</string>
+    <string name="change_pwd_echec">Changement du mot de passe à échoué</string>
 </resources>
