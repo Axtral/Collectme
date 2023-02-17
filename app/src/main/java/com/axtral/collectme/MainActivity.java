@@ -34,6 +34,7 @@ import java.util.List;
 // Page d'accueil après connexion
 public class MainActivity extends AbstracCollectmeActivity {
 
+
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CategorieDAO categorieDAO;
     private Spinner spinnerChooseCategorie;
