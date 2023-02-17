@@ -47,7 +47,6 @@ public class CategorieSpinnerBasicAdapter extends BaseAdapter {
         Categorie categorie = categories.get(position);
         if (categorie != null){
             et_nom.setText(categorie.getNom());
-            //Log.d("TestForSpinnerCustomBasicAdapter", "spinner custom basic ok");
             et_idCategorie.setText(categorie.getId());
             et_idCategorie.setVisibility(View.GONE);
             et_nom_label.setVisibility(View.GONE);

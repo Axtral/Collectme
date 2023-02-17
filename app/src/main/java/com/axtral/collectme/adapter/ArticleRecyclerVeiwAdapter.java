@@ -59,7 +59,6 @@ public class ArticleRecyclerVeiwAdapter extends RecyclerView.Adapter<ArticleView
             @Override
             public void onClick(View v) {
                 Log.d("remplirRecyclerViewArticle", "dans le onClick ");
-
                 if ("MainActivity".equals(nameContext)) {
                     Log.d("remplirRecyclerViewArticle", "dans l'appel ");
                     ((MainActivity) context).gotToDetailArticle(article);
