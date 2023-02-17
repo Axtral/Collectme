@@ -1,18 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Collectme</string>
-    <string name="Title_Form_Inscription">Title_Form_Inscription</string>
-    <string name="email_text">email_text</string>
-    <string name="mot_de_passe_text">mot_de_passe_text</string>
-    <string name="allerALaConnexion">Connexion</string>
-    <string name="tnscription_text">S\'inscire</string>
-    <string name="inscription_reussite">inscription_reussite</string>
-    <string name="inscription_echec">inscription_echec</string>
-    <string name="back">retour</string>
-    <string name="title_form_connexion">title  form connexion</string>
-    <string name="connexion_reussite">connexion_reussite</string>
-    <string name="connexion_echec">connexion_echec</string>
-    <string name="add_article_text">ajouter un article</string>
-    <string name="choose_category">choix de la categorie</string>
+    <string name="Title_Form_Inscription">Sign Up</string>
+    <string name="email_text">Mail</string>
+    <string name="mot_de_passe_text">Password</string>
+    <string name="allerALaConnexion">Login</string>
+    <string name="tnscription_text">Sign in</string>
+    <string name="inscription_reussite">succes inscription</string>
+    <string name="inscription_echec">echec inscription</string>
+    <string name="back">back</string>
+    <string name="title_form_connexion">Sign in</string>
+    <string name="connexion_reussite">Sign in ok</string>
+    <string name="connexion_echec">Fail sign in</string>
+    <string name="add_article_text">add article</string>
+    <string name="choose_category">choose category</string>
     <string name="nom_categorie">Nom categorie</string>
     <string name="nom_categorie_label">Nom categorie</string>
     <string name="id_categorie_spinner">id categorie</string>
@@ -23,11 +24,11 @@
     <string name="date_creation">date création</string>
     <string name="id_user_for_article">id user</string>
     <string name="id_article_detail">id article</string>
-    <string name="update_article">mise à jour</string>
+    <string name="update_article" >update</string>
     <string name="formulaire_update_article">Formulaire de mise à jour</string>
     <string name="change_password">changer mot de passe</string>
     <string name="logout">déconnexion</string>
-    <string name="access_connexion">acccéder à la connexion</string>
+    <string name="access_connexion">go to sigin</string>
     <string name="formulaire_change_pwd">Formulaire de changement de mot de passe</string>
     <string name="confirmation_mot_de_passe">Confirmation du mot de passe</string>
     <string name="message_erreur_change_pwd">Votre mot de passe n\'est pas identique à sa confirmation</string>
