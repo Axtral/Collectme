@@ -41,8 +41,6 @@ public class ArticleDetailActivity extends AbstracCollectmeActivity {
     public void remplirRecyclerViewArticles(List<Article> articles){
         //Gestion du recyclerView
         //on renseigne la liste des categorie a notre adapter
-        //Log.d("testListCategorie","nbs de categorie : "+ categories.size());
-        Log.d("remplirRecyclerViewArticle", "log de size : "+ articles.size());
         rvForDetailArticle.setLayoutManager(new LinearLayoutManager(ArticleDetailActivity.this));
         articleRecyclerVeiwAdapter = new ArticleRecyclerVeiwAdapter(articles, this, "ArticleDetailActivity");
         rvForDetailArticle.setAdapter(articleRecyclerVeiwAdapter);

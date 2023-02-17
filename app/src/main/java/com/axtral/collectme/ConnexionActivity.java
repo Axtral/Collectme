@@ -38,9 +38,6 @@ public class ConnexionActivity extends AbstracCollectmeActivity {
     }
 
     public void onClickGoToInscription(View view){
-        //Intent intent = new Intent(this, InscriptionActivity.class);
-        //startActivity(intent);
-        Log.d("testConnexion", "test de retour à la page précédante");
         Intent intent = new Intent(this, InscriptionActivity.class);
         startActivity(intent);
         finish();
@@ -50,7 +47,6 @@ public class ConnexionActivity extends AbstracCollectmeActivity {
     public void onClickConnexionUser(View view){
         String mail = et_mail.getText().toString();
         String mdp = et_mdp.getText().toString();
-        Log.d("testConnexion", "mail : "+mail+" , mdp : "+mdp);
         checkUserFireBase(mail, mdp);
 
     }
@@ -81,9 +77,9 @@ public class ConnexionActivity extends AbstracCollectmeActivity {
 
     public void updateUI(FirebaseUser user){
         if (user != null){
-            Log.d("testConnexion", user.getUid());
+
             Toast.makeText(ConnexionActivity.this,
-                    R.string.connexion_reussite, Toast.LENGTH_LONG).show();
+                    R.string.connexion_reussite, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {

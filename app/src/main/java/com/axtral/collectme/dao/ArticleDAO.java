@@ -42,7 +42,6 @@ public class ArticleDAO extends AbstractDAO{
                                         document.getString("idCategorie"),
                                         document.getTimestamp("dateCreation")));
                             }
-                            Log.d("testListArticles","size articles : "+ articles.size());
                             switch (nameActivity){
                                 case "MainActivity" :
                                     ((MainActivity) context).remplirRecyclerViewArticles(articles);

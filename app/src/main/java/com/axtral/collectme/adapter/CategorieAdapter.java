@@ -36,7 +36,6 @@ public class CategorieAdapter extends RecyclerView.Adapter<CategorieViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull CategorieViewHolder holder, int position) {
         //On recup le produit de la ligne conserné(position) et on set les composants avec les bonne donnée
-        //Log.d("testListCategorie","position de categorie : "+ position);
         Categorie categorie = categories.get(position);
         holder.getEt_nom().setText(categorie.getNom());
         holder.getEt_idCategorie().setText(categorie.getId());
@@ -46,7 +45,6 @@ public class CategorieAdapter extends RecyclerView.Adapter<CategorieViewHolder> 
 
     @Override
     public int getItemCount() {
-        //Log.d("testListCategorieAdapter","nbs de categorie : "+ categories.size());
         return categories.size();
     }
 

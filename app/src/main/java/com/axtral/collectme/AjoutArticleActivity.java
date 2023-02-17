@@ -49,14 +49,6 @@ public class AjoutArticleActivity extends AbstracCollectmeActivity {
     }
 
     private void init(){
-        /*user = FirebaseAuth.getInstance().getCurrentUser();
-        articleService = new ArticleServiceImpl();
-        et_nom = (EditText) findViewById(R.id.et_nom_form_article);
-        etml_description = (EditText) findViewById(R.id.etml_form_description);
-        spinnerAllCategorie = (Spinner) findViewById(R.id.chooseCategorieAjoutArticle);
-        categorieDAO = new CategorieDAO();
-        categorieDAO.getListCategories(this, "AjoutArticleActivity");*/
-
         user = FirebaseAuth.getInstance().getCurrentUser();
         articleService = new ArticleServiceImpl();
         et_nom = (EditText) findViewById(R.id.et_nom_form_article);
@@ -128,15 +120,12 @@ public class AjoutArticleActivity extends AbstracCollectmeActivity {
 
     public void onClickAjoutArticle(View view){
         // Vérification qu'on set bien tout les valeurs
-        Log.d("testFormAjoutArticle", "id categorie : " + idCategorie);
         String nom = et_nom.getText().toString();
         String description = etml_description.getText().toString();
         Article newArticle = new Article();
         newArticle.setNom(nom);
         newArticle.setDescription(description);
         newArticle.setIdCategorie(idCategorie);
-        Log.d("testFormAjoutArticle", "nom : " + nom);
-        Log.d("testFormAjoutArticle", "description : " + description);
         if (user != null) {
             String uid = user.getUid();
             Log.d("testFormAjoutArticle", "uid : " + uid);
@@ -147,7 +136,7 @@ public class AjoutArticleActivity extends AbstracCollectmeActivity {
             this.startActivity(intent);
             finish();
         }else {
-            Log.d("testFormAjoutArticle", "création impossible");
+            Log.w("FormAjoutArticle", "création impossible");
         }
 
 
@@ -162,15 +151,11 @@ public class AjoutArticleActivity extends AbstracCollectmeActivity {
 
     public void onClickUpdate(View view){
         // Vérification qu'on set bien tout les valeurs
-        Log.d("testFormUpdateArticle", "id categorie : " + idCategorie);
         String nom = et_nom.getText().toString();
         String description = etml_description.getText().toString();
         currentIntentArticle.setNom(nom);
         currentIntentArticle.setDescription(description);
         currentIntentArticle.setIdCategorie(idCategorie);
-        Log.d("testFormUpdateArticle", "nom : " + nom);
-        Log.d("testFormUpdateArticle", "description : " + description);
-        Log.d("testFormUpdateArticle", "id article : " + currentIntentArticle.getId());
         articleService.updateArticle(currentIntentArticle);
         Intent intent = new Intent(this, ArticleDetailActivity.class);
         intent.putExtra("articleSelected", currentIntentArticle);

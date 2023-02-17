@@ -54,10 +54,7 @@ public class MainActivity extends AbstracCollectmeActivity {
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            Log.d("swipedArticleList", "on swip un article");
             Article article = articleList.get(viewHolder.getAdapterPosition());
-            Log.d("swipedArticleList", "on swip l'article : " + article.getNom());
-            Log.d("swipedArticleList", "on swip l'article : " + article.getId());
             articleService = new ArticleServiceImpl();
             articleService.deleteArticle(article);
             articleList.remove(viewHolder.getAdapterPosition());
@@ -109,7 +106,6 @@ public class MainActivity extends AbstracCollectmeActivity {
                         String nomCategorie = categorieItem.getNom();
                         String idCategorieItem = categorieItem.getId();
                         initArticlesFireBases(idCategorieItem);
-                        Toast.makeText(MainActivity.this, nomCategorie + " selected", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -124,8 +120,6 @@ public class MainActivity extends AbstracCollectmeActivity {
     public void remplirRecyclerViewArticles(List<Article> articles){
         //Gestion du recyclerView
         //on renseigne la liste des categorie a notre adapter
-        //Log.d("testListCategorie","nbs de categorie : "+ categories.size());
-        Log.d("remplirRecyclerViewArticle", "log de size : "+ articles.size());
         articleList = articles;
         rvListArticle.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         articleRecyclerVeiwAdapter = new ArticleRecyclerVeiwAdapter(articles, this, "MainActivity");
@@ -137,12 +131,8 @@ public class MainActivity extends AbstracCollectmeActivity {
     }
 
     public void initArticlesFireBases(String idCategorieItem){
-        Log.d("initArticlesFireBases", "on va remplir la recyclerView ");
-        Log.d("initArticlesFireBases", "l'id categorie est  : " + idCategorieItem);
         if(user != null){
-            Log.d("initArticlesFireBases", "on a un user. id : "+ user.getUid());
             articleService.getArticles(user.getUid(), this, "MainActivity", idCategorieItem);
-
         }
     }
 

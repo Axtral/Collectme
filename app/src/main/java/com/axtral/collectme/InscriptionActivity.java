@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,19 +40,14 @@ public class InscriptionActivity extends AbstracCollectmeActivity {
     }
 
     public void onCLickInscription(View view){
-        // Afficher dans les log bonjour, tu es dans le onClickInscription
-        //Log.d("testInscription", "bonjour, tu es dans le onClickInscription");
-
         // Afficher dans les logs les variables saisi par l'utilisateur
         String mail = et_mail.getText().toString();
         String mdp = et_mdp.getText().toString();
-        Log.d("testInscription", "mail : "+mail+" , mdp : "+mdp);
         insertUserFireBase(mail, mdp);
     }
 
     public void onClickGoToConnexion(View view) {
         // Afficher à l'utilisateur bonjour, tu es dans le onClickGoToConnexion
-        Toast.makeText(this, "bonjour, tu es dans le onClickGoToConnexion", Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, ConnexionActivity.class);
         startActivity(intent);
 
@@ -83,9 +79,9 @@ public class InscriptionActivity extends AbstracCollectmeActivity {
     }
     public void updateUI(FirebaseUser user){
         if (user != null){
-            Toast.makeText(InscriptionActivity.this, R.string.inscription_reussite, Toast.LENGTH_LONG).show();
+            Toast.makeText(InscriptionActivity.this, R.string.inscription_reussite, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(InscriptionActivity.this, R.string.inscription_echec, Toast.LENGTH_LONG).show();
+            Toast.makeText(InscriptionActivity.this, R.string.inscription_echec, Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -50,14 +50,13 @@
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_form_change_pwd"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/et_form_change_pwd"
                         android:ems="10"
-                        android:inputType="textPassword"
                         android:hint="@string/mot_de_passe_text"
-                        android:minHeight="48dp"
-                        android:background="@color/white"/>
+                        android:inputType="textPassword"
+                        android:minHeight="48dp" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,14 +67,13 @@
                     app:passwordToggleEnabled="true">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_form_chage_pwd_confirmation"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/et_form_chage_pwd_confirmation"
                         android:ems="10"
                         android:hint="@string/confirmation_mot_de_passe"
                         android:inputType="textPassword"
-                        android:minHeight="48dp"
-                        android:background="@color/white">
+                        android:minHeight="48dp">
 
                     </com.google.android.material.textfield.TextInputEditText>
 
